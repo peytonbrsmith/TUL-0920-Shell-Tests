@@ -1,6 +1,9 @@
-Concerns when handling the exit commnad:
+exit
 
-Q: Will this function be required to free anything that had been malloc'd yet
-not freed yet? If so, how will this be handled.
-
-A1:
+#Concerns when handling the exit commnad:
+#
+# - Q: Will this function be required to free anything that had been malloc'd yet
+# not freed yet? If so, how will this be handled.
+#
+# - A1: I believed they'd want us to do this as exit is not an abort command and is meant to safely and cleanly exit the program.
+#    Thus, I coded mine to free everything when exit is used, then actually exit. - Peyton
