@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "exit 234" | "$SHELL" &> /dev/null
+exit_status="${PIPESTATUS[1]}"
+
+if [ $exit_status -eq 234 ]; then
+	   print_ok
+else
+	   print_ko
+fi
+
+stop_shell
